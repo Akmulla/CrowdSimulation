@@ -11,8 +11,10 @@ public:
 
 	Vector2 operator+ (const Vector2& right);
 	Vector2 operator- (const Vector2& right);
+	Vector2 operator/ (float denominator);
 	float Magnitude();
 	Vector2 Direction();
 	void Normalize();
-	//float Dot(const Vector2& right);
 };
+
+float Dot(const Vector2& left, const Vector2& right);
