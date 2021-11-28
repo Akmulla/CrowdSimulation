@@ -22,6 +22,7 @@ Vector2 Vector2::operator- (const Vector2& right)
 {
 	return Vector2(x - right.x, y - right.y);
 }
+
 Vector2 Vector2::operator/ (float denominator)
 {
 	return Vector2(x / denominator, y / denominator);
@@ -37,13 +38,12 @@ float Vector2::Magnitude()
 	return std::sqrt(x * x + y * y);
 }
 
-
-//Vector2 Vector2::Direction()
-//{
-//	return Vector2()
-//}
+Vector2 Vector2::Direction()
+{
+	return Vector2(x, y) / Magnitude();
+}
 
 void Vector2::Normalize()
 {
-	
+	*this / Magnitude();
 }
