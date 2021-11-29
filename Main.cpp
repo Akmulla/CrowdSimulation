@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Windows.h>
+#include "window.h"
 
 int CALLBACK WinMain(
 	_In_ HINSTANCE hInstance,
@@ -7,6 +8,10 @@ int CALLBACK WinMain(
 	_In_ LPSTR lpCmdLine,
 	_In_ int nCmdShow)
 {
-	
+	Window window(hInstance);
+	while (true)
+	{
+
+	}
 	return 0;
 }
