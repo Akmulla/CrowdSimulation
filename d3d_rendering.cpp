@@ -15,10 +15,10 @@ D3DRendering::D3DRendering(HWND hwnd)
 	sd.SampleDesc.Count = 1;
 	sd.SampleDesc.Quality = 0;
 	sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-	sd.BufferCount = 1;
+	sd.BufferCount = 2;
 	sd.OutputWindow = hwnd;
 	sd.Windowed = TRUE;
-	sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+	sd.SwapEffect = DXGI_SWAP_EFFECT_SEQUENTIAL;
 	sd.Flags = 0;
 
 	const UINT feature_level_count = 2;
@@ -39,5 +39,27 @@ D3DRendering::D3DRendering(HWND hwnd)
 	    &context_
 	);
 
-	//delete[] feature_levels;
+	ID3D11Texture2D* backBuffer;
+	hr = swapChain_->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&backBuffer);
+
+	if (hr != S_OK)
+	{
+		OutputDebugString("\nFailed to create back buffer\n\n");
+		return;
+	}
+
+	device_->CreateRenderTargetView(backBuffer, nullptr, &target_view_);
+	backBuffer->Release();
+
+	context_->OMSetRenderTargets(1, &target_view_, NULL);
+
+	D3D11_VIEWPORT viewport;
+	ZeroMemory(&viewport, sizeof(D3D11_VIEWPORT));
+
+	viewport.TopLeftX = 0;
+	viewport.TopLeftY = 0;
+	viewport.Width = 800;
+	viewport.Height = 600;
+
+	context_->RSSetViewports(1, &viewport);
 }
