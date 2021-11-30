@@ -23,7 +23,7 @@ Window::Window(HINSTANCE hInstance)
 	wc.hIconSm = nullptr;
 	RegisterClassEx(&wc);
 
-	hwnd = CreateWindowEx(
+	hwnd_ = CreateWindowEx(
 		0,
 		winClassName,
 		"MyWindow",
@@ -38,6 +38,8 @@ Window::Window(HINSTANCE hInstance)
 		nullptr
 	);
 
-	ShowWindow(hwnd, SW_SHOW);
+	graphics_ = new Graphics(hwnd_);
+
+	ShowWindow(hwnd_, SW_SHOW);
 }
 

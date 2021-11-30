@@ -10,5 +10,5 @@ class Graphics
 public:
 	Graphics(HWND hwnd);
 private:
-	D3DRendering d3d_;
+	D3DRendering* d3d_;
 };
