@@ -9,6 +9,7 @@ int CALLBACK WinMain(
 	_In_ int nCmdShow)
 {
 	Window window(hInstance);
+
 	while (true)
 	{
 
