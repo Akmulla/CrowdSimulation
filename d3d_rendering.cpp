@@ -1,6 +1,14 @@
 #include "d3d_rendering.h"
 
-D3DRendering::D3DRendering(HWND hwnd)
+D3DRendering::D3DRendering()
+{
+	swapChain_ = nullptr;
+	device_ = nullptr;
+	context_ = nullptr;
+	target_view_ = nullptr;
+}
+
+bool D3DRendering::Init(HWND hwnd)
 {
 	DXGI_SWAP_CHAIN_DESC sd;
 	ZeroMemory(&sd, sizeof(DXGI_SWAP_CHAIN_DESC));
@@ -36,19 +44,32 @@ D3DRendering::D3DRendering(HWND hwnd)
 		&swapChain_,
 		&device_,
 		nullptr,
-	    &context_
+		&context_
 	);
+
+	if (FAILED(hr))
+	{
+		OutputDebugString("\nFailed to create device and swap chain\n\n");
+		return false;
+	}
 
 	ID3D11Texture2D* backBuffer;
 	hr = swapChain_->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&backBuffer);
 
-	if (hr != S_OK)
+	if (FAILED(hr))
 	{
 		OutputDebugString("\nFailed to create back buffer\n\n");
-		return;
+		return false;
 	}
 
-	device_->CreateRenderTargetView(backBuffer, nullptr, &target_view_);
+	hr = device_->CreateRenderTargetView(backBuffer, nullptr, &target_view_);
+
+	if (FAILED(hr))
+	{
+		OutputDebugString("\nFailed to create render target view\n\n");
+		return false;
+	}
+
 	backBuffer->Release();
 
 	context_->OMSetRenderTargets(1, &target_view_, NULL);
@@ -62,4 +83,6 @@ D3DRendering::D3DRendering(HWND hwnd)
 	viewport.Height = 600;
 
 	context_->RSSetViewports(1, &viewport);
+
+	return true;
 }
