@@ -6,5 +6,6 @@ class Window
 public:
 	Window(HINSTANCE hInstance);
 private:
-	HWND hwnd;
+	HWND hwnd_;
+
 };
