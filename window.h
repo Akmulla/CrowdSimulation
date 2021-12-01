@@ -6,6 +6,7 @@ class Window
 {
 public:
 	Window(HINSTANCE hInstance);
+	~Window();
 	bool InitGraphics();
 	void Render();
 private:

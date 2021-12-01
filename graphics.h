@@ -6,6 +6,7 @@ class Graphics
 {
 public:
 	Graphics();
+	~Graphics();
 	bool Init(HWND hwnd);
 	void BeginFrame();
 	void EndFrame();

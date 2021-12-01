@@ -5,6 +5,11 @@ Graphics::Graphics()
 	d3d_ = new D3DRendering();
 }
 
+Graphics::~Graphics()
+{
+	delete d3d_;
+}
+
 bool Graphics::Init(HWND hwnd)
 {
 	return d3d_->Init(hwnd);
