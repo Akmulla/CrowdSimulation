@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="d3d_rendering.cpp" />
+    <ClCompile Include="graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="d3d_rendering.h" />
+    <ClInclude Include="graphics.h" />
     <ClInclude Include="math.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
