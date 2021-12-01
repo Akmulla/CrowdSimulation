@@ -5,7 +5,8 @@
 class Graphics
 {
 public:
-	Graphics(HWND hwnd);
+	Graphics();
+	bool Init(HWND hwnd);
 private:
 	D3DRendering* d3d_;
 };

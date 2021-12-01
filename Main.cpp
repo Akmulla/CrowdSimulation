@@ -10,6 +10,11 @@ int CALLBACK WinMain(
 {
 	Window window(hInstance);
 
+	if (!window.InitGraphics())
+	{
+		return 1;
+	}
+
 	while (true)
 	{
 

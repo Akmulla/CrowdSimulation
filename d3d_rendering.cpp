@@ -79,8 +79,8 @@ bool D3DRendering::Init(HWND hwnd)
 
 	viewport.TopLeftX = 0;
 	viewport.TopLeftY = 0;
-	viewport.Width = 800;
-	viewport.Height = 600;
+	viewport.Width = 1024;
+	viewport.Height = 768;
 
 	context_->RSSetViewports(1, &viewport);
 

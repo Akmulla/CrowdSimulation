@@ -38,8 +38,13 @@ Window::Window(HINSTANCE hInstance)
 		nullptr
 	);
 
-	graphics_ = new Graphics(hwnd_);
+	graphics_ = new Graphics();
 
 	ShowWindow(hwnd_, SW_SHOW);
+}
+
+bool Window::InitGraphics()
+{
+	return graphics_->Init(hwnd_);
 }
 
