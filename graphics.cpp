@@ -9,3 +9,13 @@ bool Graphics::Init(HWND hwnd)
 {
 	return d3d_->Init(hwnd);
 }
+
+void Graphics::BeginFrame()
+{
+	d3d_->ClearBackground();
+}
+
+void Graphics::EndFrame()
+{
+	d3d_->EndRender();
+}

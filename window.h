@@ -7,6 +7,7 @@ class Window
 public:
 	Window(HINSTANCE hInstance);
 	bool InitGraphics();
+	void Render();
 private:
 	HWND hwnd_;
 	Graphics* graphics_;

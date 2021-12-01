@@ -48,3 +48,9 @@ bool Window::InitGraphics()
 	return graphics_->Init(hwnd_);
 }
 
+void Window::Render()
+{
+	graphics_->BeginFrame();
+	graphics_->EndFrame();
+}
+

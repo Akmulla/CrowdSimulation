@@ -17,7 +17,7 @@ int CALLBACK WinMain(
 
 	while (true)
 	{
-
+		window.Render();
 	}
 	return 0;
 }

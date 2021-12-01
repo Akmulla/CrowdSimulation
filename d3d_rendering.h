@@ -9,6 +9,8 @@ class D3DRendering
 public:
 	D3DRendering();
 	bool Init(HWND hwnd);
+	void ClearBackground();
+	void EndRender();
 private:
 	IDXGISwapChain* swapChain_;
 	ID3D11Device* device_;

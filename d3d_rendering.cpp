@@ -86,3 +86,14 @@ bool D3DRendering::Init(HWND hwnd)
 
 	return true;
 }
+
+void D3DRendering::ClearBackground()
+{
+	float color[] { 255,255,0,255 };
+	context_->ClearRenderTargetView(target_view_, color);
+}
+
+void D3DRendering::EndRender()
+{
+	swapChain_->Present(1u, 0u);
+}
