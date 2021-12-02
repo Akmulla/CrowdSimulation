@@ -97,3 +97,9 @@ void D3DRendering::EndRender()
 {
 	swap_chain_->Present(1u, 0u);
 }
+
+ID3D11Resource* D3DRendering::CreateSpriteTexture(const wchar_t* spritePath)
+{
+
+	return nullptr;
+}

@@ -141,16 +141,20 @@
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="d3d_rendering.cpp" />
+    <ClCompile Include="game_object.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math.cpp" />
+    <ClCompile Include="sprite.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
     <ClInclude Include="d3d_rendering.h" />
+    <ClInclude Include="game_object.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="sprite.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
