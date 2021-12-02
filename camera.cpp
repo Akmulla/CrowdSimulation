@@ -18,24 +18,9 @@ void Camera::GetViewMatrix(DirectX::XMMATRIX& view_matrix)
 {
 	using namespace DirectX;
 
-	XMVECTOR position = XMVectorSet(pos_.x, pos_.y, 0, 1);
+	XMVECTOR position = XMVectorSet(pos_.x, pos_.y, -10, 1);
+	XMVECTOR focus = XMVectorSet(pos_.x, pos_.y, 0, 1);
+	XMVECTOR up = XMVectorSet(0,1,0,1);
 
-	//DirectX::XMFLOAT3 up, position, lookAt;
-
-	//// Setup the vector that points upwards.
-	//up.x = 0.0f;
-	//up.y = 1.0f;
-	//up.z = 0.0f;
-
-	//// Setup the position of the camera in the world.
-	//position.x = this->pos.x;
-	//position.y = this->pos.y;
-	//position.z = -10.0f;
-
-	//// Setup where the camera is looking by default.
-	//lookAt.x = 0.0f;
-	//lookAt.y = 0.0f;
-	//lookAt.z = 1.0f;
-
-	//lookAt = position + lookAt;
+	view_matrix = XMMatrixLookAtLH(position, focus, up);
 }
