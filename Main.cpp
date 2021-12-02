@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Windows.h>
+
 #include "window.h"
 #include "game_object.h"
 #include "math.h"

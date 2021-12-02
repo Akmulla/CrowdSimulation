@@ -103,3 +103,13 @@ ID3D11Resource* D3DRendering::CreateSpriteTexture(const wchar_t* spritePath)
 
 	return nullptr;
 }
+
+ID3D11VertexShader* D3DRendering::CreateVertexShader(const wchar_t* shader_path)
+{
+	return nullptr;
+}
+
+ID3D11PixelShader* D3DRendering::CreatePixelShader(const wchar_t* shader_path)
+{
+	return nullptr;
+}

@@ -1,5 +1,6 @@
-#include "math.h"
 #include <cmath>
+
+#include "math.h"
 
 Vector2::Vector2()
 {
