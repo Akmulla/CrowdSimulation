@@ -98,10 +98,9 @@ void D3DRendering::EndRender()
 	swap_chain_->Present(1u, 0u);
 }
 
-ID3D11Resource* D3DRendering::CreateSpriteTexture(const wchar_t* spritePath)
+void D3DRendering::CreateSpriteTexture(const wchar_t* spritePath, ID3D11Resource* sprite_texture, ID3D11ShaderResourceView* texture_view, ID3D11SamplerState* sampler_state)
 {
 
-	return nullptr;
 }
 
 ID3D11VertexShader* D3DRendering::CreateVertexShader(const wchar_t* shader_path)

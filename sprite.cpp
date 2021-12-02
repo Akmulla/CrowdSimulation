@@ -10,6 +10,11 @@ Sprite::Sprite()
 	sampler_state_ = nullptr;
 }
 
+Sprite::~Sprite()
+{
+
+}
+
 void Sprite::Initialize(ID3D11Resource* sprite_texture, ID3D11ShaderResourceView* texture_view, ID3D11SamplerState* sampler_state)
 {
 	sprite_texture_ = sprite_texture;
