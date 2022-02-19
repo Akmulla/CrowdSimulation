@@ -30,5 +30,6 @@ int CALLBACK WinMain(
 	{
 		window.Render();
 	}
+
 	return 0;
 }
