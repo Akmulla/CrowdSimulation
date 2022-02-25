@@ -2,7 +2,7 @@
 
 D3DRendering::D3DRendering()
 {
-	swapChain_ = nullptr;
+	swap_chain_ = nullptr;
 	device_ = nullptr;
 	context_ = nullptr;
 	target_view_ = nullptr;
@@ -41,7 +41,7 @@ bool D3DRendering::Init(HWND hwnd)
 		feature_level_count,
 		D3D11_SDK_VERSION,
 		&sd,
-		&swapChain_,
+		&swap_chain_,
 		&device_,
 		nullptr,
 		&context_
@@ -54,7 +54,7 @@ bool D3DRendering::Init(HWND hwnd)
 	}
 
 	ID3D11Texture2D* backBuffer;
-	hr = swapChain_->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&backBuffer);
+	hr = swap_chain_->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&backBuffer);
 
 	if (FAILED(hr))
 	{
@@ -95,5 +95,20 @@ void D3DRendering::ClearBackground()
 
 void D3DRendering::EndRender()
 {
-	swapChain_->Present(1u, 0u);
+	swap_chain_->Present(1u, 0u);
+}
+
+void D3DRendering::CreateSpriteTexture(const wchar_t* spritePath, ID3D11Resource* sprite_texture, ID3D11ShaderResourceView* texture_view, ID3D11SamplerState* sampler_state)
+{
+
+}
+
+ID3D11VertexShader* D3DRendering::CreateVertexShader(const wchar_t* shader_path)
+{
+	return nullptr;
+}
+
+ID3D11PixelShader* D3DRendering::CreatePixelShader(const wchar_t* shader_path)
+{
+	return nullptr;
 }

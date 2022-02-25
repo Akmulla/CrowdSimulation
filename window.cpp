@@ -43,6 +43,11 @@ Window::Window(HINSTANCE hInstance)
 	ShowWindow(hwnd_, SW_SHOW);
 }
 
+Window::~Window()
+{
+	delete graphics_;
+}
+
 bool Window::InitGraphics()
 {
 	return graphics_->Init(hwnd_);
