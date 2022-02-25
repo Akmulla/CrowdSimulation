@@ -9,7 +9,6 @@ GameObject* CreateGameObject(Vector2 pos)
 {
 	GameObject* obj = new GameObject();
 
-
 	return obj;
 }
 
