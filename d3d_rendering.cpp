@@ -105,6 +105,19 @@ void D3DRendering::CreateSpriteTexture(const wchar_t* spritePath, ID3D11Resource
 
 ID3D11VertexShader* D3DRendering::CreateVertexShader(const wchar_t* shader_path)
 {
+	HRESULT hr;
+	ID3D10Blob* vertexShaderBuffer;
+	ID3D10Blob* errorMessage;
+
+	hr = D3DCompileFromFile(shader_path, nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "main", "vs_5_0", 0, 0,
+		&vertexShaderBuffer,
+		&errorMessage);
+	
+	if (FAILED(hr))
+	{
+		
+	}
+
 	return nullptr;
 }
 
